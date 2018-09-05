@@ -1,0 +1,16 @@
+[user]
+	name = otaon
+	email = 16165624+otaon@users.noreply.github.com
+[color]
+	ui = auto
+[core]
+	excludesfile = /Users/tamac/.gitignore_global
+	quotepath = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/tamac/.stCommitMsg

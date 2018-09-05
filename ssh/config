@@ -1,0 +1,49 @@
+# -----------------------------------------------------------
+# target host     : github
+# connection test : $ ssh -T github.com
+# -----------------------------------------------------------
+# Setting for git on Terminal
+Host github.com
+	HostName github.com
+	User git
+	Port 22
+	PreferredAuthentications publickey
+	IdentityFile /Users/tamac/.ssh/otaon_GitHub
+	TCPKeepAlive yes
+	IdentitiesOnly yes
+
+# Setting for SourceTree
+Host git
+	HostName github.com
+	User git
+	Port 22
+	PreferredAuthentications publickey
+	IdentityFile /Users/tamac/.ssh/id_rsa_git
+	#IdentityFile ~/.ssh/id_rsa_git
+	#TCPKeepAlive yes
+	#IdentitiesOnly yes
+
+# -----------------------------------------------------------
+# target host     : gist
+# connection test : $ ssh -T gist.github.com
+# -----------------------------------------------------------
+# Setting for git on Terminal
+Host gist.github.com
+	HostName gist.github.com
+	User git
+	Port 22
+	PreferredAuthentications publickey
+	IdentityFile /Users/tamac/.ssh/otaon_GitHub
+	TCPKeepAlive yes
+	IdentitiesOnly yes
+
+# Setting for SourceTree
+Host git
+	HostName gist.github.com
+	User git
+	Port 22
+	PreferredAuthentications publickey
+	IdentityFile ~/.ssh/id_rsa_git
+	#TCPKeepAlive yes
+	#IdentitiesOnly yes
+

@@ -1,0 +1,188 @@
+" ==============================================================================
+" dein.vimの設定・プラグインのインストール
+" ==============================================================================
+
+"" "HOW TO USE" deinの使用方法 --------------------------------------------- {{{
+" 上記に記述したプラグインをインストール
+"call dein#install()
+" 導入済みのプラグインをアップデート
+"call dein#update()
+" 未使用プラグインがあるかチェックし、
+" あれば削除する
+" call map(dein#check_clean(), "delete(v:val, 'rf')")
+" call dein#recache_runtimepath()
+"" ------------------------------------------------------------------------- }}}
+
+"" プラグインのリポジトリ管理(Dein)----------------------------------------- {{{
+" Dein用設定 -------------------------------------------------------------------
+" Dein実行のためにcompatibleを無効化する
+if &compatible
+	set nocompatible
+endif
+
+" dein.vimインストール時に指定したディレクトリをセット
+let s:dein_dir = expand('~/.vim/dein')
+
+" dein.vimの実体があるディレクトリを設定
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+" ランタイムパスにdein.vimを追加する
+if &runtimepath !~# '/dein.vim'
+	" dein.vimが存在していない場合はgithubからcloneする
+	if !isdirectory(s:dein_repo_dir)
+		execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+	endif
+	execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+endif
+
+" プラグインのインストールディレクトリ設定
+call dein#begin(expand(s:dein_dir))
+" NOTE: dein#beginとdein#endで
+" プラグイン一覧を挟む必要がある
+
+" Shougoさんの製作物------------------------------------------------------------
+" dein自体
+call dein#add('Shougo/dein.vim')
+
+" 非同期処理を行うため
+call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+" NOTE:	deinと使うと便利
+
+" Vimで使えるShell
+call dein#add('Shougo/vimshell')
+
+" ファイルやバッファをリスト表示する
+call dein#add('Shougo/unite.vim')
+
+" uniteから分離したmruファイル用設定
+call dein#add('Shougo/neomru.vim')
+
+" 非同期でmakeし、結果をuniteに出力
+call dein#add('Shougo/unite-build')
+
+" 入力補完を行うため
+call dein#add('Shougo/neocomplcache')
+
+" スニペット補完を行うため
+call dein#add('Shougo/neosnippet')
+
+" スニペット集
+call dein#add('Shougo/neosnippet-snippets')
+
+" バイナリファイルエディタ
+call dein#add('Shougo/vinarise.vim')
+
+" アウトライン表示
+call dein#add('Shougo/unite-outline')
+
+" Shougoさん以外の製作物--------------------------------------------------------
+"markdown記法を使うため
+call dein#add('kannokanno/previm')
+
+"vimからブラウザを開くため
+call dein#add('tyru/open-browser.vim')
+
+" スニペット集
+call dein#add('honza/vim-snippets')
+call dein#add('rcmdnk/vim-octopress-snippets')
+
+"記述したコードの構文チェック
+call dein#add('scrooloose/syntastic')
+
+"カラースキーム
+call dein#add('altercation/vim-colors-solarized',
+			\{'script_type' : 'colors', 'rtp' : 'colors'})
+call dein#add('w0ng/vim-hybrid',
+			\{'script_type' : 'colors', 'rtp' : 'colors'})
+call dein#add('sjl/badwolf',
+			\{'script_type' : 'colors', 'rtp' : 'colors'})
+call dein#add('nanotech/jellybeans.vim',
+			\{'script_type' : 'colors', 'rtp' : 'colors'})
+call dein#add('AlessandroYorba/Alduin', 
+			\{'script_type' : 'colors', 'rtp' : 'colors'})
+call dein#add('chriskempson/tomorrow-theme', 
+			\{'script_type' : 'colors', 'rtp' : 'vim/colors'})
+call dein#add('freeo/vim-kalisi', 
+			\{'script_type' : 'colors', 'rtp' : 'vim/colors'})
+call dein#add('reedes/vim-colors-pencil',
+			\{'script_type' : 'colors', 'rtp' : 'colors'})
+call dein#add('jacoborus/tender.vim', 
+			\{'script_type' : 'colors', 'rtp' : 'colors'})
+call dein#add('romainl/Apprentice',
+			\{'script_type' : 'colors', 'rtp' : 'colors'})
+call dein#add('cocopon/iceberg.vim', 
+			\{'script_type' : 'colors', 'rtp' : 'colors'})
+call dein#add('tomasr/molokai', 
+			\{'script_type' : 'colors', 'rtp' : 'colors'})
+call dein#add('tyrannicaltoucan/vim-deep-space', 
+			\{'script_type' : 'colors', 'rtp' : 'colors'})
+call dein#add('morhetz/gruvbox', 
+			\{'script_type' : 'colors', 'rtp' : 'colors'})
+call dein#add('arcticicestudio/nord-vim', 
+			\{'script_type' : 'colors', 'rtp' : 'colors'})
+call dein#add('KeitaNakamura/neodark.vim', 
+			\{'script_type' : 'colors', 'rtp' : 'colors'})
+call dein#add('whatyouhide/vim-gotham', 
+			\{'script_type' : 'colors', 'rtp' : 'colors'})
+call dein#add('chriskempson/tomorrow-theme', 
+			\{'script_type' : 'colors', 'rtp' : 'vim/colors'})
+call dein#add('vim-scripts/twilight', 
+			\{'script_type' : 'colors', 'rtp' : 'colors'})
+
+"Ruby向けにendを自動挿入する
+call dein#add('tpope/vim-endwise')
+
+"ログファイルを色付けする
+call dein#add('vim-scripts/AnsiEsc.vim')
+
+"vimでSublimeのminimapライクな表示
+call dein#add('severin-lemaignan/vim-minimap')
+
+"ステータスラインを簡単に設定する
+call dein#add('itchyny/lightline.vim')
+
+"ディレクトリをTree表示する
+call dein#add('majutsushi/tagbar')
+
+"ファイラ
+call dein#add('cocopon/vaffle.vim') 
+
+"w3mをvimに使う
+call dein#add('yuratomo/w3m.vim')
+
+" vimのテキストをscreenやtmuxに送る
+"NeoBundle 'jpalardy/vim-slime'
+" NOTE:	tmuxはデフォじゃないので、
+" 使用時は以下の変数をセットする
+" let g:slime_target = "tmux"
+
+" Clojure(Lisp方言の方)の開発環境
+"NeoBundle 'VimClojure'
+" NOTE:	slimvと競合するので、
+" 使うときはどちらかを無効にする。
+" 使用可能にするには以下の設定が必須
+"	syntax on(他所で設定済み)
+"	filetype plugin indent on(他所で設定済み)
+
+" LispやClojure(Lisp方言の方)の開発環境
+call dein#add('kovisoft/slimv')
+" NOTE:	VimClojureと競合するので、
+" 使うときはどちらかを無効にする
+
+" NeoBundleリポジトリ管理終了
+call dein#end()
+" NOTE: dein#beginとdein#endで
+" プラグイン一覧を挟む必要がある
+"" ------------------------------------------------------------------------- }}}
+
+"" シンタックスの有効化----------------------------------------------------- {{{
+syntax enable
+"" ------------------------------------------------------------------------- }}}
+
+""" ファイルの関連付けON---------------------------------------------------- {{{
+filetype plugin indent on
+"" NOTE: filetype plugin on と filetype indent on を行った状態になる。
+"" 設定の意味はfiletypeおよびfiletype-overview参照。
+"" compatibleを解除しないとonに出来ない。
+""" ------------------------------------------------------------------------ }}}
+
