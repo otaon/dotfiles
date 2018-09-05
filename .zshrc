@@ -7,12 +7,6 @@ autoload -Uz colors; colors
 # ビープを鳴らさない
 setopt nobeep
 
-# プロンプト
-# 1行表示
-#PROMPT="%~ %# "
-# 2行表示
-#PROMPT="%{${fg[red]}%}[%n@%m]%{${reset_color}%} %~ %# "
-
 # Color
 export TERM=xterm-256color
 # 色の設定
@@ -26,6 +20,26 @@ export CLICOLOR=true
 # 補完候補に色を付ける
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
+# 左プロンプト設定
+PROMPT='%(!.%{${fg_no_bold[red]}%}.%{${fg_no_bold[green]}%})%n%{${fg_no_bold[yellow]}%}@%{${fg_no_bold[cyan]}%}%m%{${reset_color}%}:%{${fg[yellow]}%}%~%{${reset_color}%}
+%{${fg_no_bold[yellow]}%}%(!.#.$)%{${reset_color}%} '
+
+# 右プロンプト設定
+# NOTE: vcs管理下のディレクトリの場合にステータスを表示
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () { vcs_info }
+RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
+
+# プロンプト設定に含まれるスクリプトを展開する
+setopt prompt_subst
+# 最新以外の右プロンプト表示を消す
+setopt transient_rprompt
 
 # 環境変数
 export LANG=ja_JP.UTF-8
@@ -102,27 +116,6 @@ alias gvim="open -a MacVim"
 #  alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 #  alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 #fi
-
-
-# first PS1 setting
-# export PS1="\h:\W \u\$"
-#export PS1="\[\033[032m\]\u@\h\[\033[0m\]:\[\033[034m\]\w\[\033[0m\]$ "
-#PROMPT='%{'$'\e[''$33m%}%U%B%m{%n}%b%{'$'\e[''m%}%U%%%u '
-PROMPT='%(!.%{${fg_no_bold[red]}%}.%{${fg_no_bold[green]}%})%n%{${fg_no_bold[yellow]}%}@%{${fg_no_bold[cyan]}%}%m%{${fg_no_bold[yellow]}%}%(!.#.$)%{${reset_color}%} '
-RPROMPT='%{${fg[yellow]}%}[%(5~,%-2~/.../%2~,%~)]%{${reset_color}%}'
-setopt prompt_subst
-setopt transient_rprompt
-
-# vim molokai color code
-# cyan #66d9ef 81
-# orange #fd971f 208
-# magenta #f92972 197
-# yellow #e6db74 222
-# purple #ae81ff 141
-# lightcyan #c4be89 193
-# lightmagenta f92672 199
-# red #f92672 161
-# green #a6e22e 154
 
 # XQuartz(X11)で日本語入力する設定(MacUIM)
 export XMODIFIERS="@im=uim"
