@@ -14,7 +14,13 @@ set fileencodings=guess,utf-8,iso-2022-jp,sjis,euc-jp,ucs-bom,default,latin1,ucs
 
 "" バックアップファイル・スワップファイル設定 ------------ {{{
 " バックアップファイルの保存先設定 -----
-set backupdir=$HOME/.backup
+if has("win32")
+	set backupdir=$HOME/_backup
+elseif has("mac")
+	set backupdir=$HOME/.backup
+elseif has("unix")
+	set backupdir=$HOME/.backup
+endif
 
 " バックアップファイルの拡張子を設定----
 set backupext=.vimback
@@ -35,5 +41,13 @@ set autochdir
 " そのウィンドウのカレントディレクトリにする
 
 " 辞書ファイルの場所 -------------------
-autocmd FileType *  execute printf("setlocal dict+=$HOME/.vim/vimdictionary/%s.dict", &filetype)
+
+if has("win32")
+	autocmd FileType *  execute printf("setlocal dict+=$HOME/vimfiles/vimdictionary/%s.dict", &filetype)
+elseif has("unix")
+	autocmd FileType *  execute printf("setlocal dict+=$HOME/.vim/vimdictionary/%s.dict", &filetype)
+elseif has("mac")
+	autocmd FileType *  execute printf("setlocal dict+=$HOME/.vim/vimdictionary/%s.dict", &filetype)
+endif
 "" ------------------------------------------------------- }}}
+

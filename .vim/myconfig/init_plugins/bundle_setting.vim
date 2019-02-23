@@ -30,7 +30,9 @@ if &runtimepath !~# '/Vundle.vim'
 endif
 
 " プラグインのインストール設定" ------------------------------------------------
-call vundle#begin()
+set rtp+=$HOME/.vim/bundle/Vundle.vim/
+call vundle#begin('$HOME/.vim/bundle/')
+
 " NOTE: 上記のメソッドコールとcall vundle#end()で
 " プラグイン一覧を挟む必要がある
 
@@ -99,8 +101,8 @@ Plugin 'majutsushi/tagbar'
 "ファイラ
 Plugin 'cocopon/vaffle.vim'
 
-"w3mをvimに使う
-Plugin 'yuratomo/w3m.vim'
+""w3mをvimに使う
+"Plugin 'yuratomo/w3m.vim'
 
 " LispやClojure(Lisp方言の方)の開発環境
 Plugin 'kovisoft/slimv'
@@ -121,8 +123,8 @@ Plugin 'w0ng/vim-hybrid'
 Plugin 'sjl/badwolf'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'AlessandroYorba/Alduin'
-Plugin 'chriskempson/tomorrow-theme', {'rtp' : 'vim/'}
-Plugin 'freeo/vim-kalisi', {'rtp' : 'vim/'}
+Plugin 'chriskempson/tomorrow-theme', {'rtp' : 'vim'}
+Plugin 'freeo/vim-kalisi', {'rtp' : 'vim'}
 Plugin 'reedes/vim-colors-pencil'
 Plugin 'jacoborus/tender.vim'
 Plugin 'romainl/Apprentice'

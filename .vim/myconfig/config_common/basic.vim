@@ -110,7 +110,14 @@ set tabstop=4
 " ------------------------------------------------------------------------------
 " 不可視文字の可視化
 " ------------------------------------------------------------------------------
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+if has("win32")
+	set listchars=tab:>-,trail:-,eol:_,extends:>,precedes:<,nbsp:%
+elseif has("mac")
+	set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+elseif has("mac")
+	set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+endif
+
 set list
 
 " ------------------------------------------------------------------------------
@@ -163,3 +170,15 @@ set visualbell t_vb=
 " visualbellでチカチカする
 "" ------------------------------------------------------------------------- }}}
 
+"" Python環境設定 ---------------------------------------------------------- {{{
+if has("win32")
+	set pythonthreedll=C:\Python37\python37.dll
+	set pythondll=C:\Windows\System32\python27.dll
+endif
+"" ------------------------------------------------------------------------- }}}
+
+"" windows環境設定 --------------------------------------------------------- {{{
+if has("win32")
+	set shell=powershell.exe
+endif
+"" ------------------------------------------------------------------------- }}}

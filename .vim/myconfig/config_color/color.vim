@@ -6,13 +6,18 @@
 syntax on
 
 " カラースキーム設定 -------------------
-set background=dark
+"set background=light
+"let g:solarized_italic=0
+"let g:solarized_contrast="high"
 "colorscheme solarized
-"" NOTE: solarized(dark)に設定する
+"" NOTE: solarizedに設定する
+
 "colorscheme molokai
-" NOTE: molokaiに設定する
+"" NOTE: molokaiに設定する
+
 "colorscheme jellybeans
-" NOTE: jellybeansに設定する
+"" NOTE: jellybeansに設定する
+
 colorscheme iceberg
 " NOTE: icebergに設定する
 
