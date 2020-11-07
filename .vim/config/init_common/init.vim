@@ -15,18 +15,24 @@ set fileencodings=guess,utf-8,iso-2022-jp,sjis,euc-jp,ucs-bom,default,latin1,ucs
 "" バックアップファイル・スワップファイル設定 ------------ {{{
 " バックアップファイルの保存先設定 -----
 if has("win32")
-	set backupdir=$HOME/_backup
+	set backupdir=$HOME/.vim/backup
 elseif has("mac")
-	set backupdir=$HOME/.backup
+	set backupdir=$HOME/.vim/backup
 elseif has("unix")
-	set backupdir=$HOME/.backup
+	set backupdir=$HOME/.vim/backup
 endif
 
 " バックアップファイルの拡張子を設定----
 set backupext=.vimback
 
 " アンドゥファイルの保存先設定 ---------
-set undodir=$HOME/.undo
+if has("win32")
+	set undodir=$HOME/.vim/undo
+elseif has("mac")
+	set undodir=$HOME/.vim/undo
+elseif has("unix")
+	set undodir=$HOME/.vim/undo
+endif
 
 " スワップファイルの保存先設定 ---------
 let &directory = &backupdir
@@ -41,12 +47,11 @@ set autochdir
 " そのウィンドウのカレントディレクトリにする
 
 " 辞書ファイルの場所 -------------------
-
 if has("win32")
-	autocmd FileType *  execute printf("setlocal dict+=$HOME/vimfiles/vimdictionary/%s.dict", &filetype)
+	autocmd FileType *  execute printf("setlocal dict+=$HOME/.vim/dictionary/%s.dict", &filetype)
 elseif has("unix")
-	autocmd FileType *  execute printf("setlocal dict+=$HOME/.vim/vimdictionary/%s.dict", &filetype)
+	autocmd FileType *  execute printf("setlocal dict+=$HOME/.vim/dictionary/%s.dict", &filetype)
 elseif has("mac")
-	autocmd FileType *  execute printf("setlocal dict+=$HOME/.vim/vimdictionary/%s.dict", &filetype)
+	autocmd FileType *  execute printf("setlocal dict+=$HOME/.vim/dictionary/%s.dict", &filetype)
 endif
 "" ------------------------------------------------------- }}}

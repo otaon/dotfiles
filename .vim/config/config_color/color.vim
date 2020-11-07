@@ -18,8 +18,19 @@ syntax on
 "colorscheme jellybeans
 "" NOTE: jellybeansに設定する
 
+set background=dark
 colorscheme iceberg
 " NOTE: icebergに設定する
+
+"" 背景を透過する(タブ等は透過しない) --
+"augroup TransparentBG
+"	autocmd!
+"	autocmd Colorscheme * highlight Normal ctermbg=none
+"	autocmd Colorscheme * highlight NonText ctermbg=none
+"	autocmd Colorscheme * highlight LineNr ctermbg=none
+"	autocmd Colorscheme * highlight Folded ctermbg=none
+"	autocmd Colorscheme * highlight EndOfBuffer ctermbg=none 
+"augroup END
 
 " カーソル行をハイライト ---------------
 "set cursorline
