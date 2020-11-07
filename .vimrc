@@ -13,11 +13,11 @@ scriptencoding utf-8
 " set encoding=utf-8
 
 " vimrc 分割
-runtime! myconfig/init_common/*.vim
-runtime! myconfig/init_plugins/*.vim
-runtime! myconfig/config_common/*.vim
-runtime! myconfig/config_plugins/*.vim
-runtime! myconfig/config_color/*.vim
+runtime! config/init_common/*.vim
+runtime! config/init_plugins/*.vim
+runtime! config/config_common/*.vim
+runtime! config/config_plugins/*.vim
+runtime! config/config_color/*.vim
 
 "--------------------------------------------------
 "起動時のメッセージを消す

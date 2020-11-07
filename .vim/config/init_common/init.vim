@@ -50,4 +50,3 @@ elseif has("mac")
 	autocmd FileType *  execute printf("setlocal dict+=$HOME/.vim/vimdictionary/%s.dict", &filetype)
 endif
 "" ------------------------------------------------------- }}}
-
