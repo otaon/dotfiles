@@ -21,7 +21,7 @@ elseif has("mac")
 	let g:slimv_lisp='/usr/local/bin/ros run'
 	let g:slimv_impl='sbcl'
 elseif has("unix")
-	let g:slimv_lisp='/usr/local/bin/ros run'
+	let g:slimv_lisp='ros run'
 	let g:slimv_impl='sbcl'
 endif
 "et g:slimv_preferred='clisp'

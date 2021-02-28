@@ -18,19 +18,8 @@ syntax on
 "colorscheme jellybeans
 "" NOTE: jellybeansに設定する
 
-set background=dark
 colorscheme iceberg
 " NOTE: icebergに設定する
-
-"" 背景を透過する(タブ等は透過しない) --
-"augroup TransparentBG
-"	autocmd!
-"	autocmd Colorscheme * highlight Normal ctermbg=none
-"	autocmd Colorscheme * highlight NonText ctermbg=none
-"	autocmd Colorscheme * highlight LineNr ctermbg=none
-"	autocmd Colorscheme * highlight Folded ctermbg=none
-"	autocmd Colorscheme * highlight EndOfBuffer ctermbg=none 
-"augroup END
 
 " カーソル行をハイライト ---------------
 "set cursorline
@@ -70,3 +59,18 @@ if has("syntax")
 endif
 " NOTE:	Tab文字も区別されずにハイライトされるので、
 " 区別したいときはTab文字の表示を別に設定する
+
+
+" 端末を半透明化 -----------------------
+if has('unix')
+    if !has('gui_running')
+        augroup seiya
+            autocmd!
+            autocmd VimEnter,ColorScheme * highlight Normal ctermbg=none
+            autocmd VimEnter,ColorScheme * highlight LineNr ctermbg=none
+            autocmd VimEnter,ColorScheme * highlight SignColumn ctermbg=none
+            autocmd VimEnter,ColorScheme * highlight VertSplit ctermbg=none
+            autocmd VimEnter,ColorScheme * highlight NonText ctermbg=none
+        augroup END
+    endif
+endif

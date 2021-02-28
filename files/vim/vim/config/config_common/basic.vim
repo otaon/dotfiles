@@ -114,7 +114,7 @@ if has("win32")
 	set listchars=tab:>-,trail:-,eol:_,extends:>,precedes:<,nbsp:%
 elseif has("mac")
 	set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
-elseif has("mac")
+elseif has("unix")
 	set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 endif
 

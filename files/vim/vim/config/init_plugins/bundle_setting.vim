@@ -99,7 +99,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'majutsushi/tagbar'
 
 " pythonで入力補完する
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 
 "ファイラ
 Plugin 'cocopon/vaffle.vim'
@@ -108,7 +108,7 @@ Plugin 'cocopon/vaffle.vim'
 Plugin 'SirVer/ultisnips'
 
 "w3mをvimに使う
-Plugin 'yuratomo/w3m.vim'
+"Plugin 'yuratomo/w3m.vim'
 
 " LispやClojure(Lisp方言の方)の開発環境
 Plugin 'kovisoft/slimv'
@@ -129,8 +129,8 @@ Plugin 'w0ng/vim-hybrid'
 Plugin 'sjl/badwolf'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'AlessandroYorba/Alduin'
-Plugin 'chriskempson/tomorrow-theme', {'rtp' : 'vim/'}
-Plugin 'freeo/vim-kalisi', {'rtp' : 'vim/'}
+Plugin 'chriskempson/tomorrow-theme', {'rtp' : 'vim'}
+Plugin 'freeo/vim-kalisi', {'rtp' : 'vim'}
 Plugin 'reedes/vim-colors-pencil'
 Plugin 'jacoborus/tender.vim'
 Plugin 'romainl/Apprentice'
