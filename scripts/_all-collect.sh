@@ -11,6 +11,7 @@ set_pref
 # Script body
 pref_echo "Collect-all start"
 . ${REPO_SCRIPT}/bash-collect.sh
+. ${REPO_SCRIPT}/zsh-collect.sh
 . ${REPO_SCRIPT}/config-collect.sh
 . ${REPO_SCRIPT}/git-collect.sh
 . ${REPO_SCRIPT}/ssh-collect.sh
