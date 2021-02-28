@@ -17,21 +17,20 @@ endif
 " 2. filetype設定を一時無効化する
 filetype off
 
-" Vundleインストール時に指定したディレクトリをセット
-let s:Vundle_dir = expand('~/.vim/bundle/Vundle.vim')
-
-" ランタイムパスにVundleを追加する
-if &runtimepath !~# '/Vundle.vim'
+" 3. ランタイムパス設定(デリミタ非依存になるように実装した)
+let s:Vundle_dir = fnamemodify(expand('~/.vim/bundle/Vundle.vim'), 'p:')
+if &runtimepath !~# 'Vundle.vim'
 	" Vundleが存在していない場合はgithubからcloneする
 	if !isdirectory(s:Vundle_dir)
 		execute '!git clone https://github.com/VundleVim/Vundle.vim.git' s:Vundle_dir
 	endif
-	execute 'set runtimepath^=' . fnamemodify(s:Vundle_dir, ':p')
+	" ランタイムパスにVundleのディレクトリを追加する
+	execute 'set runtimepath^=' . s:Vundle_dir
 endif
 
 " プラグインのインストール設定" ------------------------------------------------
-set rtp+=$HOME/.vim/bundle/Vundle.vim/
-call vundle#begin('$HOME/.vim/bundle/')
+let s:bundle_path = expand('~/.vim/bundle')
+call vundle#begin(s:bundle_path)
 
 " NOTE: 上記のメソッドコールとcall vundle#end()で
 " プラグイン一覧を挟む必要がある

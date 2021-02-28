@@ -13,11 +13,27 @@ scriptencoding utf-8
 " set encoding=utf-8
 
 " vimrc 分割
-runtime! config/init_common/*.vim
-runtime! config/init_plugins/*.vim
-runtime! config/config_common/*.vim
-runtime! config/config_plugins/*.vim
-runtime! config/config_color/*.vim
+" windowsの場合でも.vimディレクトリをruntimepathに追加する
+if has('win32')
+	if &runtimepath !~# '\\.vim'
+		let s:dotvim_dir = expand('~') . '\\.vim'
+		execute 'set runtimepath^=' . s:dotvim_dir
+	endif
+endif
+
+if has('win32')
+	runtime! config\init_common\*.vim
+	runtime! config\init_plugins\*.vim
+	runtime! config\config_common\*.vim
+	runtime! config\config_plugins\*.vim
+	runtime! config\config_color\*.vim
+else
+	runtime! config/init_common/*.vim
+	runtime! config/init_plugins/*.vim
+	runtime! config/config_common/*.vim
+	runtime! config/config_plugins/*.vim
+	runtime! config/config_color/*.vim
+endif
 
 "--------------------------------------------------
 "起動時のメッセージを消す
