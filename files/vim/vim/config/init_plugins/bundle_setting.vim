@@ -88,6 +88,9 @@ Plugin 'rcmdnk/vim-octopress-snippets'
 Plugin 'kovisoft/slimv'
 
 " LSP(Language Server Protocol)
+Plugin 'prabirshrestha/async.vim'
+Plugin 'prabirshrestha/asyncomplete.vim'
+Plugin 'prabirshrestha/asyncomplete-lsp.vim'
 Plugin 'prabirshrestha/vim-lsp'
 
 " LSP(Language Server Protocol)自動設定ツール

@@ -37,7 +37,7 @@ elseif has('xfontset')
   " UNIX用 (xfontsetを使用)
   set guifontset=a14,r14,k14
 else
-  set guifont=Ubuntu\ Mono\ 11
+  set guifont=Ubuntu\ Mono\ 14
 endif
 
 "---------------------------------------------------------------------------
@@ -51,8 +51,6 @@ set lines=60
 set cmdheight=2
 " 画面を黒地に白にする (次行の先頭の " を削除すれば有効になる)
 "colorscheme evening " (GUI使用時)
-" 画面の透明度を設定する(MacVim)
-set transparency=10
 
 "---------------------------------------------------------------------------
 
