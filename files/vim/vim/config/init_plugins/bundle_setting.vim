@@ -1,10 +1,21 @@
 " ==============================================================================
 " Vundleの設定・プラグインのインストール
 " ==============================================================================
-" NOTE: Vundle is used to manage plugins
-" How To Install Plugins:
+" NOTE:
+" Vundle is used to manage plugins
+
+" How To Use Vundle:
 " Launch vim and run :PluginInstall
 " To install from command line: vim +PluginInstall +qall
+
+" Brief Help:
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
 "" プラグインのリポジトリ管理 ---------------------------------------------- {{{
 " Vundle用設定 -----------------------------------------------------------------
@@ -39,45 +50,11 @@ call vundle#begin(s:bundle_path)
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" 非同期処理を行うため
-Plugin 'Shougo/vimproc.vim'
-
-" Vimで使えるShell
-Plugin 'Shougo/vimshell'
-
-"" ファイルやバッファをリスト表示する
-"Plugin 'Shougo/unite.vim'
-
-" uniteから分離したmruファイル用設定
-Plugin 'Shougo/neomru.vim'
-
-" 非同期でmakeし、結果をuniteに出力
-Plugin 'Shougo/unite-build'
-
-" 入力補完を行うため
-Plugin 'Shougo/neocomplcache'
-
-" スニペット補完を行うため
-Plugin 'Shougo/neosnippet'
-
-" スニペット集
-Plugin 'Shougo/neosnippet-snippets'
-
-" バイナリファイルエディタ
-Plugin 'Shougo/vinarise.vim'
-
-" アウトライン表示
-Plugin 'Shougo/unite-outline'
-
 "markdown記法を使うため
 Plugin 'previm/previm'
 
 "vimからブラウザを開くため
 Plugin 'tyru/open-browser.vim'
-
-" スニペット集
-Plugin 'honza/vim-snippets'
-Plugin 'rcmdnk/vim-octopress-snippets'
 
 "記述したコードの構文チェック
 Plugin 'scrooloose/syntastic'
@@ -97,30 +74,24 @@ Plugin 'itchyny/lightline.vim'
 "ディレクトリをTree表示する
 Plugin 'majutsushi/tagbar'
 
-" pythonで入力補完する
-"Plugin 'davidhalter/jedi-vim'
-
 "ファイラ
 Plugin 'cocopon/vaffle.vim'
 
 " スニペットプラグイン
 Plugin 'SirVer/ultisnips'
 
-"w3mをvimに使う
-"Plugin 'yuratomo/w3m.vim'
+" スニペット集
+Plugin 'honza/vim-snippets'
+Plugin 'rcmdnk/vim-octopress-snippets'
 
-" LispやClojure(Lisp方言の方)の開発環境
+" LispやClojureの開発環境
 Plugin 'kovisoft/slimv'
-" NOTE:	VimClojureと競合するので、
-" 使うときはどちらかを無効にする
 
-" Clojure(Lisp方言の方)の開発環境
-"NeoBundle 'VimClojure'
-" NOTE:	slimvと競合するので、
-" 使うときはどちらかを無効にする。
-" 使用可能にするには以下の設定が必須
-"	syntax on(他所で設定済み)
-"	filetype plugin indent on(他所で設定済み)
+" LSP(Language Server Protocol)
+Plugin 'prabirshrestha/vim-lsp'
+
+" LSP(Language Server Protocol)自動設定ツール
+Plugin 'mattn/vim-lsp-settings'
 
 "カラースキーム
 Plugin 'altercation/vim-colors-solarized'
