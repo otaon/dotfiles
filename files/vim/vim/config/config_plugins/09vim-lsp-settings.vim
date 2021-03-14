@@ -129,3 +129,11 @@ let g:asyncomplete_popup_delay = 200
 " テキスト編集時のサポート入力を有効化
 let g:lsp_text_edit_enabled = 1
 
+" --------------------------------------------------------------------------
+" vim-lsp-settingの使い方
+" cf. https://github.com/mattn/vim-lsp-settings
+" How To: インストール
+" インストール対応するファイルを開いた状態で
+" :LspInstallServer
+" How To: アンインストール
+" :LspUninstallServer <server-name>
