@@ -97,10 +97,10 @@ augroup END
 " --------------------------------------------------------------------------
 " vim-lspデバッグ用ログファイル出力設定
 "let g:lsp_log_verbose = 1    " 1...詳細ログを出力
-let g:lsp_log_file = expand('~/vim-lsp.log')
+let g:lsp_log_file = expand('~/.vim/lsp/vim-lsp.log')
 
 " for asyncomplete.vim log
-let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+let g:asyncomplete_log_file = expand('~/.vim/lsp/vim-lsp-asyncomplete.log')
 
 " --------------------------------------------------------------------------
 " LspDocumentDiagnostics(エラー、警告の解析)を有効化するか
