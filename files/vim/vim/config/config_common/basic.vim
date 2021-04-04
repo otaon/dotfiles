@@ -185,6 +185,9 @@ set number
 " ステータスラインの行数を指定 ---------
 set laststatus=2
 
+" ステータスラインのモード表示を無効化 --
+set noshowmode
+
 " モードラインを有効にする -------------
 set modeline
 

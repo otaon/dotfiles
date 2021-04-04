@@ -71,6 +71,9 @@ Plugin 'severin-lemaignan/vim-minimap'
 "ステータスラインを簡単に設定する
 Plugin 'itchyny/lightline.vim'
 
+"Git操作用プラグイン
+Plugin 'tpope/vim-fugitive'
+
 "ディレクトリをTree表示する
 Plugin 'majutsushi/tagbar'
 
@@ -131,4 +134,15 @@ filetype plugin indent on
 "" シンタックスの有効化----------------------------------------------------- {{{
 syntax enable
 "" ------------------------------------------------------------------------- }}}
+
+" プラグインのインストール状態チェック
+" plugin_name : Plugin '....' の、 '...' 部分
+function IsPluginInstalled(plugin_name)
+	for bundle_item in g:vundle#bundles
+		if bundle_item['name_spec'] == a:plugin_name
+			return 1
+		endif
+	endfor
+	return 0
+endfunction
 

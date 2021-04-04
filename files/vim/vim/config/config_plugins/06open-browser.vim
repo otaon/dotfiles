@@ -1,4 +1,4 @@
-
+if (!IsPluginInstalled('tyru/open-brouser.vim')) | finish | endif
 " --------------------------------------
 " open-browser用設定
 " --------------------------------------

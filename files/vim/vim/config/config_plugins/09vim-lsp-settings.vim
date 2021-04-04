@@ -1,4 +1,7 @@
+if (!IsPluginInstalled('prabirshrestha/vim-lsp')) | finish | endif
+" --------------------------------------
 " Plugin vim-lsp (Vim Language Server Protocol)
+" --------------------------------------
 
 " Command                 | Description
 " ------------------------+----------------------------------------------------------------------------------------------
@@ -93,7 +96,7 @@ augroup END
 
 " --------------------------------------------------------------------------
 " vim-lspデバッグ用ログファイル出力設定
-let g:lsp_log_verbose = 1
+"let g:lsp_log_verbose = 1    " 1...詳細ログを出力
 let g:lsp_log_file = expand('~/vim-lsp.log')
 
 " for asyncomplete.vim log

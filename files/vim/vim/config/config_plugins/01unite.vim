@@ -1,4 +1,4 @@
-
+if (!IsPluginInstalled('Shougo/unite.vim')) | finish | endif
 " --------------------------------------
 " unite.vim用設定
 " --------------------------------------

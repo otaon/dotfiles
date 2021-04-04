@@ -1,4 +1,4 @@
-
+if (!IsPluginInstalled('cocopon/vaffle.vim')) | finish | endif
 " --------------------------------------
 " vaffle用設定
 " --------------------------------------

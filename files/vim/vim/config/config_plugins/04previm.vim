@@ -1,3 +1,4 @@
+if (!IsPluginInstalled('previm/previm')) | finish | endif
 " --------------------------------------
 " previm用設定
 " --------------------------------------

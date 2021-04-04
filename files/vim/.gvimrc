@@ -2,7 +2,7 @@
 " カラー設定:
 let g:molokai_original=1
 colorscheme iceberg
-"set background=dark
+set background=dark
 "colorscheme jellybeans
 
 " カーソル行をハイライト ---------------

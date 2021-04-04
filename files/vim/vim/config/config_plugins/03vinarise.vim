@@ -1,4 +1,4 @@
-
+if (!IsPluginInstalled('Shougo/vinarise.vim')) | finish | endif
 " --------------------------------------
 " vinariseの設定
 " --------------------------------------
