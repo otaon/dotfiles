@@ -37,7 +37,9 @@ elseif has('xfontset')
   " UNIX用 (xfontsetを使用)
   set guifontset=a14,r14,k14
 else
-  set guifont=Ubuntu\ Mono\ 14
+  "lightlineに絵文字を使用したら表示が崩れたため、Sans Monoに変更
+  "set guifont=Ubuntu\ Mono\ 14
+  set guifont=DejaVu\ Sans\ Mono\ 12
 endif
 
 "---------------------------------------------------------------------------
