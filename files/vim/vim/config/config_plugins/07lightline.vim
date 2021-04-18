@@ -27,7 +27,7 @@ let g:lightline = {
 
 let s:max_winwidth = 80
 
-if has('unix') || has('mac')
+if has('unix') || has('mac') || has('win32')
   let s:pref_filename = '📝 '
   let s:pref_modified = '🔃 '
   let s:pref_not_modifiable = '🆖 '
@@ -37,16 +37,16 @@ if has('unix') || has('mac')
   let s:pref_filetype = '📝 '
   let s:pref_fenc = '📄🔤 '
   let s:pref_enc = '🔤 '
-elseif has('win32')
-  let s:pref_filename = ''
-  let s:pref_modified = '+'
-  let s:pref_not_modifiable = '-'
-  let s:pref_readonly = 'x'
-  let s:pref_git_head = 'Git:'
-  let s:pref_fileformat = 'FF:'
-  let s:pref_filetype = 'FT:'
-  let s:pref_fenc = 'FENC:'
-  let s:pref_enc = 'ENC:'
+"elseif has('win32')
+"  let s:pref_filename = ''
+"  let s:pref_modified = '+'
+"  let s:pref_not_modifiable = '-'
+"  let s:pref_readonly = 'x'
+"  let s:pref_git_head = 'Git:'
+"  let s:pref_fileformat = 'FF:'
+"  let s:pref_filetype = 'FT:'
+"  let s:pref_fenc = 'FENC:'
+"  let s:pref_enc = 'ENC:'
 endif
 
 function! LightLineModified()

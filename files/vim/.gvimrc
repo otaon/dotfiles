@@ -21,20 +21,25 @@ hi clear CursorLine
 " フォント設定:
 "
 if has('win32')
-  " Windows用
-  set guifont=M+1VM+IPAG_circle:h11:cSHIFTJIS
-  "set guifont=MS_Gothic:h11:cSHIFTJIS
-  "set guifont=MS_Mincho:h11:cSHIFTJIS
+  set guifont=Source_Code_Pro:h10:cANSI:qDRAFT
+  set guifontwide=BIZ_UDゴシック:h10:cSHIFTJIS:qDRAFT
+  "set guifontwide=UD_デジタル_教科書体_N-R:h10:cSHIFTJIS:qDRAFT
+  "set guifontwide=MS_Gothic:h10:cANSI:qDRAFT
+  "set guifont=Myrica_M:h12:cANSI:qDRAFT
+  " カラー絵文字を表示したいのでDirectXでのレンダリングを有効化
+  set rop=type:directx
+  " 絵文字の曖昧幅はdoubleで固定させる
+  set ambiwidth=double
+  " 絵文字表示の弊害になるため下の設定は無効化
+  "" 一部のUCS文字の幅を自動計測して決める
+  "if has('kaoriya')
+  "  set ambiwidth=auto
+  "endif
   " 行間隔の設定
-  set linespace=0
-  " 一部のUCS文字の幅を自動計測して決める
-  if has('kaoriya')
-    set ambiwidth=auto
-  endif
+  "set linespace=4
 elseif has('mac')
   set guifont=Andale\ Mono:h11
 elseif has('xfontset')
-  " UNIX用 (xfontsetを使用)
   set guifontset=a14,r14,k14
 else
   "lightlineに絵文字を使用したら表示が崩れたため、Sans Monoに変更

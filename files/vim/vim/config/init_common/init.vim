@@ -7,6 +7,11 @@ endif
 " これを上記のようにif-thenルールによって回避する。
 "" ------------------------------------------------------- }}}
 
+" 絵文字を表示できるようにするため
+if has("win32")
+	set encoding=utf-8
+endif
+
 " 開いたファイルのエンコードを照会する順番 --------------- {{{
 set fileencodings=guess,utf-8,iso-2022-jp,sjis,euc-jp,ucs-bom,default,latin1,ucs-2le,ucs-2,iso-2022-jp-3,euc-jisx0213
 " NOTE: 忌まわしきlatin1の優先度を下げる
@@ -47,6 +52,7 @@ set autochdir
 " そのウィンドウのカレントディレクトリにする
 
 " 辞書ファイルの場所 -------------------
+
 if has("win32")
 	autocmd FileType *  execute printf("setlocal dict+=$HOME/.vim/dictionary/%s.dict", &filetype)
 elseif has("unix")
@@ -55,3 +61,4 @@ elseif has("mac")
 	autocmd FileType *  execute printf("setlocal dict+=$HOME/.vim/dictionary/%s.dict", &filetype)
 endif
 "" ------------------------------------------------------- }}}
+
